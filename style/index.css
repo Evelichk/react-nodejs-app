@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url(../fonts/HelveticaNeueCyr-Medium.otf);
+}
+html {
+    font-family: Helvetica Neue;
+}
+.nav.navbar-nav a{
+    font-size: 1.25em;
+    color: #7a7474;
+    vertical-align: bottom;
+    margin-top: 10px;
+
+}
+.navbar-nav li a:hover{
+    font-size: 1.25em;
+    color: white;
+}
+.container{
+    width: 80%;
+}
+.nav.navbar-nav div{
+    font-size: 1.25em;
+    color: #7a7474;
+    vertical-align: bottom;
+    margin-top: 23px;
+}
+footer {
+    background: #7e7e7e;
+    color: #dbdbdb;
+    font-size: 1.2em;
+
+}
+footer .container {
+    padding: 20px 0;
+    width: 100%;
+    color: white;
+}
+.nav li{
+    margin-left: 30px;
+}
+
+.pull-right{
+    margin-right: 2%;
+}
