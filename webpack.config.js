@@ -1,4 +1,5 @@
 module.exports = {
+
     entry: "./Application/app.js",
     module: {
         loaders: [{
@@ -11,7 +12,9 @@ module.exports = {
         }]
     },
     output: {
-        path: path.resolve(__dirname, './Application'),
+        path: __dirname + '/build',
         filename: 'bundle.js'
-    }
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']}
 };
