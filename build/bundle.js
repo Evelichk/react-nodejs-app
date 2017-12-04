@@ -977,30 +977,102 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var RegisterButton = function (_React$Component) {
-    _inherits(RegisterButton, _React$Component);
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-    function RegisterButton() {
-        _classCallCheck(this, RegisterButton);
+    function App() {
+        _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (RegisterButton.__proto__ || Object.getPrototypeOf(RegisterButton)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
     }
 
-    _createClass(RegisterButton, [{
+    _createClass(App, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'button',
-                { className: 'btn btn-success' },
-                'Register'
+                'nav',
+                { role: 'navigation' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'navbar-header' },
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement('img', { src: 'images/logo.jpg', alt: 'logo' })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'nav navbar-nav' },
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            'Home'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            'About Us'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            'Keynotes'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            'Speakers'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '' },
+                            'Contact Us'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { id: 'reg', href: '' },
+                            'Register Now'
+                        )
+                    )
+                )
             );
         }
     }]);
 
-    return RegisterButton;
+    return App;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(RegisterButton, null), document.getElementById('root'));
+;
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ }),
 /* 16 */

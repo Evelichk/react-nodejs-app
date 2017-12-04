@@ -43,3 +43,12 @@ footer .container {
 .pull-right{
     margin-right: 2%;
 }
+.nav.navbar-nav a:hover{
+    color: #000000;
+}
+.pull-left{
+    margin-left: 15px;
+}
+#reg{
+    color: green;
+}
