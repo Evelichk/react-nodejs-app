@@ -1,6 +1,6 @@
 module.exports = {
 
-    entry: "./Application/app.js",
+    entry: "./Application/Index.js",
     module: {
         loaders: [{
             test: /.jsx?$/,
@@ -16,5 +16,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']}
+        extensions: ['.js', '.jsx'],
+    }
+
 };

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Helvetica Neue";
-    src: url(../fonts/HelveticaNeueCyr-Medium.otf);
+    src: url(fonts/HelveticaNeueCyr-Medium.otf);
 }
 html {
     font-family: Helvetica Neue;
@@ -51,4 +51,10 @@ footer .container {
 }
 #reg{
     color: green;
+}
+p{
+    font-size: 1.75em;
+}
+.mainlogo{
+    list-style-type: none;
 }

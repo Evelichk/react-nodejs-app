@@ -2,10 +2,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-export class Info extends React.Component{
+export default class Info extends React.Component{
     render(){
         return (
-            <div className="">
+            <div>
                 <h1 className="text-center page-header">What is IT Conference 2017?</h1>
                 <p className="text-center">It is a conference for the leaders of large, complex organizations implementing programming principles and practices.
                     The event programming emphasizes both evolving technical and architectural practices and the methods needed to lead widespread change efforts in large organizations.
