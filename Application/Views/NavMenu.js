@@ -19,8 +19,8 @@ export default class App extends React.Component {
                         <li><Link to = "/about">About Us</Link></li>
                         <li><Link to = "/keyNotes">Keynotes</Link></li>
                         <li><Link to = "/speakers">Speakers</Link></li>
-                        <li><Link to = "/contacts">Contact Us</Link></li>
-                        <li><Link to = "/registration">Register Now</Link></li>
+                        <li><Link to = "/contacts">Contacts</Link></li>
+                        <li><Link id="reg" to = "/registration">Register Now</Link></li>
                     </ul>
                 </nav>
             </div>

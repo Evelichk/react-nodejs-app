@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom';
 
 import App from './Views/NavMenu';
 import Info from './Views/About';
-import Notes from './Views/KeyNotes';
+import KeyNotes from './Views/KeyNotes';
 import Home from './Views/IndexPage';
 
 
@@ -17,7 +17,7 @@ render(
         <App>
             <Route path="/home" component={Home}/>
             <Route path = "/about" component={Info}/>
-            <Route path = "/keyNotes" component={Notes}/>
+            <Route path = "/keyNotes" component={KeyNotes}/>
             <Redirect exact path="/" to="/home"/>
 
         </App>

@@ -6,7 +6,7 @@ var public = require('./public.js');
 
 http.createServer(function (req, res) {
 console.log(req.url);
-    if (req.url.match(/\.(html|css|js|jpg|otf)$/)){
+    if (req.url.match(/\.(html|css|js|jpg)$/)){
         public(req, res);
     } else if (req.url == '/'){
 

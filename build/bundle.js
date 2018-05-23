@@ -537,6 +537,52 @@ module.exports = invariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(68);
+} else {
+  module.exports = __webpack_require__(71);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -630,7 +676,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -697,7 +743,7 @@ var createPath = exports.createPath = function createPath(location) {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -766,52 +812,6 @@ var createPath = function createPath(location) {
 
   return path;
 };
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(68);
-} else {
-  module.exports = __webpack_require__(71);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 11 */
@@ -1034,7 +1034,7 @@ Router.childContextTypes = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(10);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -1284,7 +1284,7 @@ var _valueEqual = __webpack_require__(26);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
-var _PathUtils = __webpack_require__(8);
+var _PathUtils = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2190,7 +2190,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -2807,7 +2807,7 @@ var EventListener = {
       };
     } else {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('Attempted to listen to events during the capture phase on a ' + 'browser that does not support the capture phase. Your Application ' + 'will not receive some events.');
+        console.error('Attempted to listen to events during the capture phase on a ' + 'browser that does not support the capture phase. Your application ' + 'will not receive some events.');
       }
       return {
         remove: emptyFunction
@@ -3024,11 +3024,11 @@ var _reactRouter2 = _interopRequireDefault(_reactRouter);
 
 var _reactRouterDom = __webpack_require__(33);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(7);
 
-var _App = __webpack_require__(78);
+var _NavMenu = __webpack_require__(78);
 
-var _App2 = _interopRequireDefault(_App);
+var _NavMenu2 = _interopRequireDefault(_NavMenu);
 
 var _About = __webpack_require__(79);
 
@@ -3038,7 +3038,7 @@ var _KeyNotes = __webpack_require__(80);
 
 var _KeyNotes2 = _interopRequireDefault(_KeyNotes);
 
-var _IndexPage = __webpack_require__(81);
+var _IndexPage = __webpack_require__(83);
 
 var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
@@ -3049,7 +3049,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     _reactRouterDom.BrowserRouter,
     { history: _reactRouter2.default },
     _react2.default.createElement(
-        _App2.default,
+        _NavMenu2.default,
         null,
         _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _IndexPage2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _About2.default }),
@@ -3072,7 +3072,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  This source code is licensed under the MIT license found in the
  LICENSE file in the root directory of this source tree.
 */
-var f=__webpack_require__(7),p=__webpack_require__(11);__webpack_require__(6);var r=__webpack_require__(5);
+var f=__webpack_require__(8),p=__webpack_require__(11);__webpack_require__(6);var r=__webpack_require__(5);
 function t(a){for(var b=arguments.length-1,d="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,e=0;e<b;e++)d+="\x26args[]\x3d"+encodeURIComponent(arguments[e+1]);b=Error(d+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var u={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function v(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}v.prototype.isReactComponent={};v.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?t("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};v.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function w(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}function x(){}x.prototype=v.prototype;var y=w.prototype=new x;y.constructor=w;f(y,v.prototype);y.isPureReactComponent=!0;function z(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}var A=z.prototype=new x;A.constructor=z;f(A,v.prototype);A.unstable_isAsyncReactComponent=!0;A.render=function(){return this.props.children};
@@ -3109,7 +3109,7 @@ if (process.env.NODE_ENV !== "production") {
 
 'use strict';
 
-var objectAssign$1 = __webpack_require__(7);
+var objectAssign$1 = __webpack_require__(8);
 var require$$0 = __webpack_require__(12);
 var emptyObject = __webpack_require__(11);
 var invariant = __webpack_require__(6);
@@ -4854,7 +4854,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var emptyFunction = __webpack_require__(5);
 var invariant = __webpack_require__(6);
 var warning = __webpack_require__(12);
-var assign = __webpack_require__(7);
+var assign = __webpack_require__(8);
 
 var ReactPropTypesSecret = __webpack_require__(17);
 var checkPropTypes = __webpack_require__(16);
@@ -5469,7 +5469,7 @@ var _warning = __webpack_require__(1);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _PathUtils = __webpack_require__(8);
+var _PathUtils = __webpack_require__(9);
 
 var _LocationUtils = __webpack_require__(18);
 
@@ -5642,7 +5642,7 @@ exports.default = createMemoryHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(14);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(10);
 /* unused harmony reexport parsePath */
 /* unused harmony reexport createPath */
 
@@ -5665,7 +5665,7 @@ exports.default = createMemoryHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(29);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -5969,7 +5969,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -6287,7 +6287,7 @@ var createHashHistory = function createHashHistory() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(20);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -7051,7 +7051,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(18);
 
-var _PathUtils = __webpack_require__(8);
+var _PathUtils = __webpack_require__(9);
 
 var _createTransitionManager = __webpack_require__(19);
 
@@ -7428,7 +7428,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(18);
 
-var _PathUtils = __webpack_require__(8);
+var _PathUtils = __webpack_require__(9);
 
 var _createTransitionManager = __webpack_require__(19);
 
@@ -7910,7 +7910,7 @@ NavLink.defaultProps = {
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0);__webpack_require__(6);var l=__webpack_require__(23),n=__webpack_require__(7),ba=__webpack_require__(37),ca=__webpack_require__(5),da=__webpack_require__(11),ea=__webpack_require__(38),fa=__webpack_require__(39),ha=__webpack_require__(40),ia=__webpack_require__(41);
+var aa=__webpack_require__(0);__webpack_require__(6);var l=__webpack_require__(23),n=__webpack_require__(8),ba=__webpack_require__(37),ca=__webpack_require__(5),da=__webpack_require__(11),ea=__webpack_require__(38),fa=__webpack_require__(39),ha=__webpack_require__(40),ia=__webpack_require__(41);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -8238,7 +8238,7 @@ if (process.env.NODE_ENV !== "production") {
 var react = __webpack_require__(0);
 var invariant = __webpack_require__(6);
 var ExecutionEnvironment = __webpack_require__(23);
-var _assign = __webpack_require__(7);
+var _assign = __webpack_require__(8);
 var EventListener = __webpack_require__(37);
 var require$$0 = __webpack_require__(12);
 var hyphenateStyleName = __webpack_require__(72);
@@ -10651,7 +10651,7 @@ var topLevelTypes = BrowserEventConstants_1.topLevelTypes;
  *       |           .                |        |Enter/Leave|
  *       +           .                +-------+|Plugin     |
  * +-------------+   .                         +-----------+
- * | Application |   .
+ * | application |   .
  * |-------------|   .
  * |             |   .
  * |             |   .
@@ -16521,7 +16521,7 @@ function logCapturedError$1(capturedError) {
 
     // In development, we provide our own message with just the component stack.
     // We don't include the original error message and JS stack because the browser
-    // has already printed it. Even if the Application swallows the error, it is still
+    // has already printed it. Even if the application swallows the error, it is still
     // displayed by the browser thanks to the DEV-only fake event trick in ReactErrorUtils.
     console.error(combinedMessage);
   }
@@ -22898,7 +22898,7 @@ var EventInterface = {
  *
  * Synthetic events (and subclasses) implement the DOM Level 3 Events API by
  * normalizing browser quirks. Subclasses do not necessarily have to implement a
- * DOM interface; custom Application-specific events can also subclass this.
+ * DOM interface; custom application-specific events can also subclass this.
  *
  * @param {object} dispatchConfig Configuration used to dispatch this event.
  * @param {*} targetInst Marker identifying the event target.
@@ -25681,7 +25681,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(33);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25770,7 +25770,7 @@ var App = function (_React$Component) {
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
                                     { to: '/contacts' },
-                                    'Contact Us'
+                                    'Contacts'
                                 )
                             ),
                             _react2.default.createElement(
@@ -25778,7 +25778,7 @@ var App = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/registration' },
+                                    { id: 'reg', to: '/registration' },
                                     'Register Now'
                                 )
                             )
@@ -25813,7 +25813,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25837,54 +25837,122 @@ var Info = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'main-content container' },
                 _react2.default.createElement(
-                    'h1',
-                    { className: 'text-center page-header' },
-                    'What is IT Conference 2017?'
-                ),
-                _react2.default.createElement(
-                    'p',
-                    { className: 'text-center' },
-                    'It is a conference for the leaders of large, complex organizations implementing programming principles and practices. The event programming emphasizes both evolving technical and architectural practices and the methods needed to lead widespread change efforts in large organizations. The goal is to give leaders the tools and practices they need to develop and deploy software faster and to win in the marketplace.'
-                ),
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Some stats on the 2016 San Francisco event:'
-                ),
-                _react2.default.createElement(
-                    'ul',
-                    null,
+                    'article',
+                    { className: 'text-content center-block' },
                     _react2.default.createElement(
-                        'li',
-                        null,
-                        'More than 1,300 attendees'
+                        'h1',
+                        { className: 'text-center page-header' },
+                        'WHAT IS IT CONFERENCE 2017?'
                     ),
                     _react2.default.createElement(
-                        'li',
-                        null,
-                        'More than 100 speaker'
+                        'p',
+                        { className: 'text-center' },
+                        'It is a conference for the leaders of large, complex organizations implementing programming principles and practices. The event programming emphasizes both evolving technical and architectural practices and the methods needed to lead widespread change efforts in large organizations. The goal is to give leaders the tools and practices they need to develop and deploy software faster and to win in the marketplace.'
                     ),
                     _react2.default.createElement(
-                        'li',
+                        'h3',
                         null,
-                        '75 sessions including keynotes, breakouts, panels, and workshops'
+                        'Some stats on the 2016 San Francisco event:'
                     ),
                     _react2.default.createElement(
-                        'li',
+                        'ul',
                         null,
-                        'More than 50 sponsors'
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            'More than 1,300 attendees'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            'More than 100 speaker'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '75 sessions including keynotes, breakouts, panels, and workshops'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            'More than 50 sponsors'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '3 packed days of informative sessions, networking, sharing, and learning'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            ' More than 10,000 tweets during the three-day event (from more than 1,800 contributors)'
+                        )
                     ),
                     _react2.default.createElement(
-                        'li',
+                        'h4',
                         null,
-                        '3 packed days of informative sessions, networking, sharing, and learning'
+                        'WHAT ATTENDEES ARE SAYING'
                     ),
                     _react2.default.createElement(
-                        'li',
-                        null,
-                        ' More than 10,000 tweets during the three-day event (from more than 1,800 contributors)'
+                        'ul',
+                        { className: 'nonstyle-list' },
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            ' "What I liked most about iTech was meeting customers and discovering requirements. Networking and meeting with peers in the industry."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"It was great to have the conference near me. Most of these events are held out of town. I\'m looking forward to the years to come and to see how the event will grow over time."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            ' "Overall experience was a good one. Really enjoyed the networking and sessions."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"Very educational. Keynote speakers made very good presentations about the latest trends and where Industry headed."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"It was a fantastic conference in Edmonton. I had a great time and I hope/look forward to future tech conventions."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"My IT practice revolves around infrastructure build, upgrade, maintenance for clients. iTech fit neatly with my practice."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"I see very few conferences in the Toronto area focussing on the computing system as a whole."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"I really enjoyed the keynote on Cloud Services, IT Operations Management session, Nexsan\'s presentation on disk arrays and performance improvement."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"Staff at the Microsoft booth patiently answered all my questions about the latest technology."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"iTech highlights discrete technologies while also considering computing system/network design, integration and management. Please continue in this vein."'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '"Great show with class act exhibitors and keynote sessions! Looking forward to next year!"'
+                        )
                     )
                 )
             );
@@ -25914,7 +25982,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(7);
+
+var _Note = __webpack_require__(81);
+
+var _Note2 = _interopRequireDefault(_Note);
+
+var _notesList = __webpack_require__(82);
+
+var _notesList2 = _interopRequireDefault(_notesList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25924,30 +26000,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Notes = function (_React$Component) {
-    _inherits(Notes, _React$Component);
+var KeyNotes = function (_React$Component) {
+    _inherits(KeyNotes, _React$Component);
 
-    function Notes() {
-        _classCallCheck(this, Notes);
+    function KeyNotes() {
+        _classCallCheck(this, KeyNotes);
 
-        return _possibleConstructorReturn(this, (Notes.__proto__ || Object.getPrototypeOf(Notes)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (KeyNotes.__proto__ || Object.getPrototypeOf(KeyNotes)).apply(this, arguments));
     }
 
-    _createClass(Notes, [{
+    _createClass(KeyNotes, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
-                'Content in development for now...Plase stand by'
+                { className: 'main-content container' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'text-content center-block' },
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        'KEY NOTES'
+                    ),
+                    _react2.default.createElement(
+                        'h3',
+                        null,
+                        'MORE KEYNOTES COMING, STAY TUNED!'
+                    ),
+                    _react2.default.createElement(_Note2.default, { notes: _notesList2.default[0] })
+                )
             );
         }
     }]);
 
-    return Notes;
+    return KeyNotes;
 }(_react2.default.Component);
 
-exports.default = Notes;
+exports.default = KeyNotes;
 ;
 
 /***/ }),
@@ -25967,7 +26057,99 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Note = function (_React$Component) {
+    _inherits(Note, _React$Component);
+
+    function Note() {
+        _classCallCheck(this, Note);
+
+        return _possibleConstructorReturn(this, (Note.__proto__ || Object.getPrototypeOf(Note)).apply(this, arguments));
+    }
+
+    _createClass(Note, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'container note' },
+                _react2.default.createElement(
+                    'p',
+                    { className: 'key-words' },
+                    this.props.title
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'img-container pull-left' },
+                    _react2.default.createElement('img', { className: 'img-responsive', src: this.props.imgSrc, alt: 'photo' })
+                ),
+                _react2.default.createElement(
+                    'p',
+                    { className: 'person-descript' },
+                    this.props.description
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    this.props.text
+                )
+            );
+        }
+    }]);
+
+    return Note;
+}(_react2.default.Component);
+
+exports.default = Note;
+;
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var noteList = [{
+    title: '"Secure Your Data from Ransomware and Other Threats"',
+    imgSrc: 'images/king2.jpg',
+    description: 'Stephen King Channel Development Manager Datto',
+    text: 'In 2016, companies worldwide paid over $500 MILLION due to ' + 'Ransomware attacks; when you include the cost of downtime caused by these attacks, the total loss to businesses is closer to $50 BILLION. ' + '34% of victimized businesses reported losing revenue due to Ransomware, while 20% had to stop operations completely in the aftermath of a successful data breach.' + ' As a business owner, or not-for-profit manager, no one understands or cares more about the success of your company. That’s why having business continuity in place ' + 'should be a priority, not just because it’s best practice but because it’s good for your bottom line as well.'
+}];
+
+exports.default = noteList;
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25991,8 +26173,8 @@ var Home = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
-                _react2.default.createElement('img', { src: 'images/banner.jpg', className: 'img-responsive', alt: 'banner' })
+                { className: 'mainWrapper' },
+                _react2.default.createElement('img', { src: '/images/banner.jpg', className: 'img-responsive', alt: 'banner' })
             );
         }
     }]);

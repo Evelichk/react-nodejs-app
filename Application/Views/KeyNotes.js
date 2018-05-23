@@ -1,11 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Note from '../Containers/Note'
+import noteList from '../data/notesList'
 
-export default class Notes extends React.Component{
+export default class KeyNotes extends React.Component{
     render(){
         return (
-            <div>Content in development for now...Plase stand by</div>
+            <div className="main-content container">
+                <div className="text-content center-block">
+                    <h1>KEY NOTES</h1>
+                    <h3>MORE KEYNOTES COMING, STAY TUNED!</h3>
+                    <Note notes = {noteList[0]} />
+                    </div>
+                </div>
         );
-
     };
 };

@@ -5,7 +5,10 @@ var rootingPath = require('./rootingPath');
 
 function public (req, res) {
 
-        var reqPath = req.url;
+    var reqPath = req.url;
+    var extension = path.extname(req.url);
+    var contentType = '';
+    var mainPath = rootingPath(path.resolve(__dirname + reqPath));
 
     try {
         var filePath = decodeURIComponent(req);
@@ -19,8 +22,7 @@ function public (req, res) {
         res.statusCode = 400;
         res.end('bed request');
     }
-    var extension = path.extname(req.url);
-    var contentType = '';
+
 
     switch (extension){
         case '.html':
@@ -28,15 +30,18 @@ function public (req, res) {
             break;
         case '.css':
             contentType = 'text/css';
-            break
+            break;
         case '.js':
             contentType = 'text/javascript';
             break;
-        case 'jpeg':
+        case '.map':
+            contentType = 'text/css';
+        case '.jpg':
             contentType = 'image/jpg';
             break;
-        case 'otf':
-            contentType = ''
+        case '.otf':
+            contentType = 'application/font-otf';
+            break;
         default:
             contentType = 'text/plain';
     };
@@ -45,14 +50,9 @@ function public (req, res) {
     res.statusCode = 200;
     res.setHeader = ('ContentType', contentType);
 
-
-    var mainPath = rootingPath(path.resolve(__dirname + reqPath));
-
-
-
-
     var stream = fs.createReadStream(path.resolve(mainPath));
     stream.pipe(res);
+
 
     stream.on('error', function (error) {
         if(error.code === 'ENOENT'){
