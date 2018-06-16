@@ -25,6 +25,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.16.2",
     "fs": "0.0.1-security",
+    "prop-types": "^15.6.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",

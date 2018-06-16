@@ -8,6 +8,8 @@ import App from './Views/NavMenu';
 import Info from './Views/About';
 import KeyNotes from './Views/KeyNotes';
 import Home from './Views/IndexPage';
+import Contact from './Views/Contacts';
+import RegForm from './Views/Registration'
 
 
 
@@ -18,8 +20,9 @@ render(
             <Route path="/home" component={Home}/>
             <Route path = "/about" component={Info}/>
             <Route path = "/keyNotes" component={KeyNotes}/>
+            <Route path = "/contact" component={Contact}/>
+            <Route path = "/registration" component={RegForm}/>
             <Redirect exact path="/" to="/home"/>
-
         </App>
     </Router>,
     document.getElementById('root')

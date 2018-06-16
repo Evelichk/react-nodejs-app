@@ -6,12 +6,12 @@ export default class Info extends React.Component{
         return (
             <div className="main-content container">
                 <article className="text-content center-block">
-                    <h1 className="text-center page-header">WHAT IS IT CONFERENCE 2017?</h1>
+                    <h1 className="text-center page-header">WHAT IS IT CONFERENCE 2018?</h1>
                     <p className="text-center">It is a conference for the leaders of large, complex organizations implementing programming principles and practices.
                         The event programming emphasizes both evolving technical and architectural practices and the methods needed to lead widespread change efforts in large organizations.
                         The goal is to give leaders the tools and practices they need to develop and deploy software faster and to win in the marketplace.</p>
 
-                    <h3>Some stats on the 2016 San Francisco event:</h3>
+                    <h3>Some stats on the 2017 San Francisco event:</h3>
                     <ul>
                         <li>More than 1,300 attendees</li>
                         <li>More than 100 speaker</li>

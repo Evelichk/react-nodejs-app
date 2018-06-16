@@ -20,7 +20,7 @@ function public (req, res) {
 
     if (~filePath.indexOf('\0')){
         res.statusCode = 400;
-        res.end('bed request');
+        res.end('bad request');
     }
 
 

@@ -10,7 +10,7 @@ export default class KeyNotes extends React.Component{
                 <div className="text-content center-block">
                     <h1>KEY NOTES</h1>
                     <h3>MORE KEYNOTES COMING, STAY TUNED!</h3>
-                    <Note notes = {noteList[0]} />
+                    <Note items={noteList}/>
                     </div>
                 </div>
         );
