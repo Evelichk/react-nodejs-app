@@ -1,0 +1,16 @@
+{
+  "port": 3000,
+  "main_routes": ["/", "/index.html", "/home", "/about", "/notes", "/contact", "/registration", "/pagenotfound", "/dberror"],
+  "service_routes": ["/public/style/index.css", "/node_modules/bootstrap/dist/css/bootstrap.min.css", "/public/build/bundle.js", "/public/style/fonts/HelveticaNeueCyr-Medium.otf",
+    "/public/images/banner.jpg", "/public/images/logo.jpg", "/public/images/king2.jpg", "/public/images/gilmour.jpg", "/public/images/hanks.jpg", "/public/images/error.jpg", "/public/images/duplerror.jpg",
+    "/public/images/check_mark.jpg", "/public/images/dberror.jpg"],
+  "mongoose": {
+    "uri": "mongodb://localhost:27017/visitors",
+    "options": {
+      "useNewUrlParser": "true",
+      "dbName": "visitors",
+      "reconnectTries": "20",
+      "reconnectInterval": "1000"
+    }
+  }
+}

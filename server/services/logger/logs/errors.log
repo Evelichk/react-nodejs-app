@@ -1,0 +1,112 @@
+
+2018-07-18 14:43:50 error [31mMongoose Connection ERROR to DB: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+2018-07-18 14:47:19 error [31mMongoose Connection ERROR to DB: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+2018-07-18 14:48:30 [31merror[39m: [31mMongoose Connection ERROR to DB: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017][39m
+2018-07-19 09:28:51 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\public\images\dberror.jpg'[39m
+2018-07-19 09:30:09 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\public\images\dberror.jpg'[39m
+2018-07-19 09:30:51 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\public\images\dberror.jpg'[39m
+2018-07-19 09:31:17 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\public\images\dberror.jpg'[39m
+2018-07-19 09:31:51 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\public\images\dberror.jpg'[39m
+2018-07-19 09:33:48 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\Project\Conference\services\emailer\public\images\dberror.jpg'[39m
+2018-07-19 09:35:17 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\Project\Conference\services\emailer\public\images\dberror.jpg'[39m
+2018-07-19 09:37:55 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\Project\Conference\server\services\emailer.\template\check_mark.jpg'[39m
+2018-07-19 09:38:18 [31merror[39m: [31mEmail sending errorENOENT: no such file or directory, open 'D:\Project\Conference\server\services\emailer.\template\check_mark.jpg'[39m
+2018-07-19 09:58:58 [31merror[39m: [31mENOENTENOENT: no such file or directory, open 'D:\Project\Conference\server\services\emailertemplate/index.ejs'[39m
+2018-07-19 09:59:24 [31merror[39m: [31mENOENTENOENT: no such file or directory, open 'D:\Project\Conference\server\services\emailertemplate/index.ejs'[39m
+2018-07-19 09:59:40 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/index.ejs:1[39m
+[31m >> 1| <% layout('/layout/layout') %>[39m
+[31m    2| <div class="text-center vcenter">[39m
+[31m    3|     <h1 class="error">500 Internal Server Error</h1>[39m
+[31m    4|     <p>Sorry, the page you were looking for is temporarily not available</p>[39m
+[31mlayout is not defined[39m
+2018-07-19 10:00:47 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/index.ejs:1[39m
+[31m >> 1| <% layout('/layout/layout.ejs') %>[39m
+[31m    2| <div class="text-center vcenter">[39m
+[31m    3|     <h1 class="error">500 Internal Server Error</h1>[39m
+[31m    4|     <p>Sorry, the page you were looking for is temporarily not available</p>[39m
+[31mlayout is not defined[39m
+2018-07-19 10:01:28 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/index.ejs:1[39m
+[31m >> 1| <% layout(__dirname + '/layout/layout.ejs') %>[39m
+[31m    2| <div class="text-center vcenter">[39m
+[31m    3|     <h1 class="error">500 Internal Server Error</h1>[39m
+[31m    4|     <p>Sorry, the page you were looking for is temporarily not available</p>[39m
+[31mlayout is not defined[39m
+2018-07-19 10:05:34 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/index.ejs:1[39m
+[31m >> 1| <% layout(__dirname + '/layout/layout.ejs') %>[39m
+[31m    2| <div class="text-center vcenter">[39m
+[31m    3|     <h1 class="error">500 Internal Server Error</h1>[39m
+[31m    4|     <p>Sorry, the page you were looking for is temporarily not available</p>[39m
+[31mlayout is not defined[39m
+2018-07-19 10:06:14 [31merror[39m: [31mENOENTENOENT: no such file or directory, open 'D:\Project\Conference\server\services\emailer	emplatelayoutlayout.ejs'[39m
+2018-07-19 12:23:50 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%fimg%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mfimg is not defined[39m
+2018-07-19 12:58:13 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%data%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:17:47 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%=data%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:20:04 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%={data: data}%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:20:29 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%={data}%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:22:27 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%={data}%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:23:12 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <%={data}%>[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mdata is not defined[39m
+2018-07-19 13:34:31 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <img src="images/fireworks.png" alt="fireworks, <%- result%>">[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mresult is not defined[39m
+2018-07-19 13:34:55 [31merror[39m: [31mundefinedD:\Project\Conference\server\services\emailer/template/layout.ejs:28[39m
+[31m    26|     <div class="text-center main">[39m
+[31m    27|         <h1>Thank you for registration!</h1>[39m
+[31m >> 28|         <img src="images/fireworks.png" alt="fireworks, <%- result[0]%>">[39m
+[31m    29|         <p>We are welcome you on our ITConference!</p>[39m
+[31m    30|         <p>Conference will be held on 24th of November 2018 in Sport Palace, Ukraine, Kharkiv</p>[39m
+[31m    31|         <p>We will meet you there!</p>[39m
+[31mresult is not defined[39m
